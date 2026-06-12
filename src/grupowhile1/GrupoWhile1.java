@@ -3,19 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package grupowhile1;
-
-/**
- *
- * @author el_ingeniero
- */
+import java.util.Scanner;
 public class GrupoWhile1 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("hola");
+        cajero_automatico();
     }
-    
+    public static void cajero_automatico() {
+        Scanner sc = new Scanner(System.in);
+    }
 }
