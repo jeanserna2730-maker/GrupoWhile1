@@ -26,6 +26,9 @@ public class GrupoWhile1 {
                             Tarjeta detectada
                             Ingresa tu clave:
                            """);
-        
+        while (intentos > 0 && intentos <=3) {
+            int clave_ingresada = sc.nextInt();
+            
+        }
     }
 }
