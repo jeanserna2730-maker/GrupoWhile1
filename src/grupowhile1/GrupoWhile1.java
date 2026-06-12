@@ -90,7 +90,16 @@ public class GrupoWhile1 {
         System.out.println("ingrese la cantidad de dinero a retirar");
         retirar=sc.nextDouble();
         if(retirar<0){
-           System.out.println("no se aceptan numeros negativos");
+        System.out.println("no se aceptan numeros negativos");
+        }else{
+            if (cuenta>=retirar){
+                System.out.println("Cantidad correcta");
+                System.out.println("se restara de su cuenta");
+                saldo_cuenta =cuenta - retirar;
+                System.out.println("se retiro con exito");
+                System.out.println("su cuenta quedo con "+saldo_cuenta +" dolares");
+                System.out.println("============================");
+                break;
     
     }
 }
