@@ -117,5 +117,9 @@ public class GrupoWhile1 {
         System.out.println("ingrese el monto a depositar");
          double monto = sc.nextDouble();
          
+         if (monto <= 0){
+             System.out.println("el monto debe ser mayor a 0");
+         }
+         
     }
 }
