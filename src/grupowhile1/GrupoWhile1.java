@@ -14,5 +14,18 @@ public class GrupoWhile1 {
     }
     public static void cajero_automatico() {
         Scanner sc = new Scanner(System.in);
+        
+        int clave = 1234;
+        int intentos = 3;
+        int opccion;
+        int intentos_opccion = 3;
+        System.out.println("""
+                    -----------------------------------------------------
+                                     CAJERO AUTOMATICO
+                            Ingrese su tarjeta
+                            Tarjeta detectada
+                            Ingresa tu clave:
+                           """);
+        
     }
 }
