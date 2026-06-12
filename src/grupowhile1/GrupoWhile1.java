@@ -12,6 +12,7 @@ public class GrupoWhile1 {
     public static void main(String[] args) {
         cajero_automatico();
     }
+    
     public static void cajero_automatico() {
         Scanner sc = new Scanner(System.in);
         
@@ -26,6 +27,7 @@ public class GrupoWhile1 {
                             Tarjeta detectada
                             Ingresa tu clave:
                            """);
+        
         while (intentos > 0 && intentos <=3) {
             int clave_ingresada = sc.nextInt();
             if (clave_ingresada == clave) {
@@ -66,6 +68,9 @@ public class GrupoWhile1 {
                 intentos = intentos -1;
                 System.out.println("Clave incorrecta. Te quedan " + intentos + " intentos");
             }
+        }
+        if (intentos == 0) {
+            System.out.println("Haz superado los 3 intentos...");
         }
     }
 }
