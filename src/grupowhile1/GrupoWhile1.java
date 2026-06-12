@@ -89,6 +89,8 @@ public class GrupoWhile1 {
         System.out.println("============");
         System.out.println("ingrese la cantidad de dinero a retirar");
         retirar=sc.nextDouble();
+        if(retirar<0){
+           System.out.println("no se aceptan numeros negativos");
     
     }
 }
