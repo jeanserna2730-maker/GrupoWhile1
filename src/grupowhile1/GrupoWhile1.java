@@ -55,6 +55,7 @@ public class GrupoWhile1 {
                             break;
                         case 3:
                             System.out.println("Depositar dinero:");
+                            depositar_dinero();
                             break;
                         case 4:
                             System.out.println("Gracias por elegirnos!!!");
@@ -121,6 +122,8 @@ public class GrupoWhile1 {
              System.out.println("el monto debe ser mayor a 0");
          }else{
              saldo += monto;
+             System.out.println("deposito exitoso de: "+ monto);
+             System.out.println("saldo actual: "+ saldo);
             
              
          }
