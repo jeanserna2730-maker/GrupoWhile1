@@ -80,10 +80,37 @@ public class GrupoWhile1 {
          System.out.println("Saldo disponible: "+saldo);
          System.out.println("prueba");
     }
-    public static boolean retirar_dinero(){ 
+    public static void retirar_dinero(){ 
     Scanner sc = new Scanner(System.in);
     int intentos_retiro = 3;
-    
+    double retirar;
+    double saldo_cuenta;
+    while(intentos_retiro>0){
+        System.out.println("============");
+        System.out.println("ingrese la cantidad de dinero a retirar");
+        retirar=sc.nextDouble();
+        if(retirar<0){
+        System.out.println("no se aceptan numeros negativos");
+        }else{
+            if (saldo>=retirar){
+                System.out.println("Cantidad correcta");
+                System.out.println("se restara de su cuenta");
+                saldo_cuenta =saldo - retirar;
+                System.out.println("se retiro con exito");
+                System.out.println("su cuenta quedo con "+saldo_cuenta +" dolares");
+                System.out.println("============================");
+                break;
+            }else{
+                System.out.println("cantidad incorrecta");
+                System.out.println("no tiene el dinero suficiente");
+            }
+        }
+        intentos_retiro--;
+        System.out.println("INTENTOS RESTANTES "+intentos_retiro);
+        if(intentos_retiro==0){
+            System.out.println("SE AGOTARON SUS INTENTOS");
+        }
+    }
     }
     public static void depositar_dinero(){
         Scanner sc = new Scanner (System.in);
