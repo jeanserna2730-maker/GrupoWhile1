@@ -85,21 +85,26 @@ public class GrupoWhile1 {
     int intentos_retiro = 3;
     double retirar;
     double saldo_cuenta;
-    while(inte_retir>0){
+    while(intentos_retiro>0){
         System.out.println("============");
         System.out.println("ingrese la cantidad de dinero a retirar");
         retirar=sc.nextDouble();
         if(retirar<0){
         System.out.println("no se aceptan numeros negativos");
         }else{
-            if (cuenta>=retirar){
+            if (saldo>=retirar){
                 System.out.println("Cantidad correcta");
                 System.out.println("se restara de su cuenta");
-                saldo_cuenta =cuenta - retirar;
+                saldo_cuenta =saldo - retirar;
                 System.out.println("se retiro con exito");
                 System.out.println("su cuenta quedo con "+saldo_cuenta +" dolares");
                 System.out.println("============================");
                 break;
+            }else{
+                System.out.println("cantidad incorrecta");
+                System.out.println("no tiene el dienro suficiente");
+            }
+        }
     
     }
 }
