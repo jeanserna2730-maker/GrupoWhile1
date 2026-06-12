@@ -80,9 +80,11 @@ public class GrupoWhile1 {
          System.out.println("Saldo disponible: "+saldo);
          System.out.println("prueba");
     }
-    public static boolean retirar_dinero(){ 
+    public static void retirar_dinero(){ 
     Scanner sc = new Scanner(System.in);
     int intentos_retiro = 3;
+    double retirar;
+    double saldo_cuenta;
     
     }
 }
