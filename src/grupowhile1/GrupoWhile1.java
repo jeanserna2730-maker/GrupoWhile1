@@ -51,6 +51,7 @@ public class GrupoWhile1 {
                             break;
                         case 2:
                             System.out.println("Retirar dinero:");
+                            retirar_dinero();
                             break;
                         case 3:
                             System.out.println("Depositar dinero:");
