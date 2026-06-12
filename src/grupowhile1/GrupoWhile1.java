@@ -85,4 +85,10 @@ public class GrupoWhile1 {
     int intentos_retiro = 3;
     
     }
+    public static void depositar_dinero(){
+        Scanner sc = new Scanner (System.in);
+        System.out.println("ingrese el monto a depositar");
+         double monto = sc.nextDouble();
+         
+    }
 }
