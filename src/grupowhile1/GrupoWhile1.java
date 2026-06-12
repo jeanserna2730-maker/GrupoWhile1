@@ -80,5 +80,8 @@ public class GrupoWhile1 {
          System.out.println("prueba");
     }
     public static boolean retirar_dinero(){ 
+    Scanner sc = new Scanner(System.in);
+    int intentos_retiro = 3;
+    
     }
 }
