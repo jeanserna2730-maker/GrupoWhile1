@@ -73,4 +73,9 @@ public class GrupoWhile1 {
             System.out.println("Haz superado los 3 intentos...");
         }
     }
+    public static void consultar_saldo(){
+         double saldo = 1000;
+         System.out.println("Saldo disponible: "+saldo);
+         System.out.println("prueba");
+    }
 }
