@@ -119,6 +119,9 @@ public class GrupoWhile1 {
          
          if (monto <= 0){
              System.out.println("el monto debe ser mayor a 0");
+         }else{
+             saldo += monto;
+             
          }
          
     }
