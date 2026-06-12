@@ -85,6 +85,10 @@ public class GrupoWhile1 {
     int intentos_retiro = 3;
     double retirar;
     double saldo_cuenta;
+    while(inte_retir>0){
+        System.out.println("============");
+        System.out.println("ingrese la cantidad de dinero a retirar");
+        retirar=sc.nextDouble();
     
     }
 }
