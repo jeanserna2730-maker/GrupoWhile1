@@ -102,9 +102,14 @@ public class GrupoWhile1 {
                 break;
             }else{
                 System.out.println("cantidad incorrecta");
-                System.out.println("no tiene el dienro suficiente");
+                System.out.println("no tiene el dinero suficiente");
             }
         }
-    
+        intentos_retiro--;
+        System.out.println("INTENTOS RESTANTES "+intentos_retiro);
+        if(intentos_retiro==0){
+            System.out.println("SE AGOTARON SUS INTENTOS");
+        }
+    }
     }
 }
