@@ -5,32 +5,30 @@
 package grupowhile1;
 import java.util.Scanner;
 public class GrupoWhile1 {
-    static double saldo = 1000; // variable compartida entre metodos
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        cajero_automatico();
-    }
+        static double saldo = 1000; // variable compartida entre metodos
     
-    public static void cajero_automatico() {
-        Scanner sc = new Scanner(System.in);
+public static void main(String[] args){
+    cajero_automatico();
+}
+public static void cajero_automatico() {
+        Scanner scc = new Scanner(System.in);  
         
         int clave = 1234;
         int intentos = 3;
         int opccion;
         int intentos_opccion = 3;
+        
         System.out.println("""
-                    -----------------------------------------------------
-                                     CAJERO AUTOMATICO
+                           -----------------------------------------------------
+                                            CAJERO AUTOMATICO
                             Ingrese su tarjeta
                             Tarjeta detectada
                             Ingresa tu clave:
                            """);
         
         while (intentos > 0 && intentos <=3) {
-            int clave_ingresada = sc.nextInt();
+            int clave_ingresada = scc.nextInt();
+            
             if (clave_ingresada == clave) {
                 do {
                     System.out.println("""
@@ -43,7 +41,7 @@ public class GrupoWhile1 {
                                        4. Salir
                                        Ingrese la opcion deseada:
                                        """);
-                    opccion = sc.nextInt();
+                    opccion = scc.nextInt();
                     switch (opccion) {
                         case 1:
                             System.out.println("Consultar saldo:");
@@ -51,11 +49,15 @@ public class GrupoWhile1 {
                             break;
                         case 2:
                             System.out.println("Retirar dinero:");
-                            retirar_dinero();
+                            if (!retirar_dinero()) {
+                                opccion = 4;
+                            }
                             break;
                         case 3:
                             System.out.println("Depositar dinero:");
-                            depositar_dinero();
+                            if (!depositar_dinero()) {
+                                opccion = 4;
+                            }
                             break;
                         case 4:
                             System.out.println("Gracias por elegirnos!!!");
@@ -64,6 +66,10 @@ public class GrupoWhile1 {
                             intentos_opccion --;
                             System.out.println("Te quedan "+intentos_opccion+" intentos!");
                             System.out.println("INGRESE UNA OPCIÓN VALIDA!!!");
+                            if (intentos_opccion == 0) {
+                                System.out.println("ERROR DE CAPA 8 xd");
+                                opccion = 4;
+                            }
                     }
                 } while (opccion != 4 && intentos_opccion >0); 
                 break;
@@ -72,61 +78,63 @@ public class GrupoWhile1 {
                 intentos = intentos -1;
                 System.out.println("Clave incorrecta. Te quedan " + intentos + " intentos");
             }
-        }
+        }   
         if (intentos == 0) {
             System.out.println("Haz superado los 3 intentos...");
         }
+        scc.close();
     }
-    public static void consultar_saldo(){
+     
+     public static void consultar_saldo(){
          System.out.println("Saldo disponible: "+saldo);
          System.out.println("prueba");
-    }
-    public static void retirar_dinero(){ 
-    Scanner sc = new Scanner(System.in);
-    int intentos_retiro = 3;
-    double retirar;
-    double saldo_cuenta;
-    while(intentos_retiro>0){
-        System.out.println("============");
-        System.out.println("ingrese la cantidad de dinero a retirar");
-        retirar=sc.nextDouble();
-        if(retirar<0){
-        System.out.println("no se aceptan numeros negativos");
-        }else{
-            if (saldo>=retirar){
-                System.out.println("Cantidad correcta");
-                System.out.println("se restara de su cuenta");
-                saldo =saldo - retirar;
-                System.out.println("se retiro con exito");
-                System.out.println("su cuenta quedo con "+saldo +" dolares");
-                System.out.println("============================");
-                break;
-            }else{
-                System.out.println("cantidad incorrecta");
-                System.out.println("no tiene el dinero suficiente");
+     }
+    
+    public static boolean retirar_dinero(){
+        Scanner sc = new Scanner(System.in);
+        int intentos_retiro = 3;
+    
+        while (intentos_retiro > 0) {
+            System.out.println("Ingrese el monto a retirar:");
+            double monto = sc.nextDouble();
+            
+            if (monto <= 0) {
+                System.out.println("El monto debe ser mayor a 0");
+                intentos_retiro = intentos_retiro -1;
+                System.out.println("Te quedan " + intentos_retiro + " intentos");
+            } else if (monto <= saldo) {
+                saldo = saldo - monto;
+                System.out.println("Retiro exitoso!");
+                System.out.println("Nuevo saldo: " + saldo);
+                return true;
+            } else {
+                intentos_retiro = intentos_retiro -1;
+                System.out.println("Monto no valido. Te quedan " + intentos_retiro + " intentos");
             }
         }
-        intentos_retiro--;
-        System.out.println("INTENTOS RESTANTES "+intentos_retiro);
-        if(intentos_retiro==0){
-            System.out.println("SE AGOTARON SUS INTENTOS");
-        }
+        System.out.println("ERROR DE CAPA 8 xd");
+        return false;
     }
-    }
-    public static void depositar_dinero(){
-        Scanner sc = new Scanner (System.in);
-        System.out.println("ingrese el monto a depositar");
-         double monto = sc.nextDouble();
-         
-         if (monto <= 0){
-             System.out.println("el monto debe ser mayor a 0");
-         }else{
-             saldo += monto;
-             System.out.println("deposito exitoso de: "+ monto);
-             System.out.println("saldo actual: "+ saldo);
+    
+    public static boolean depositar_dinero(){
+        Scanner sc = new Scanner(System.in);
+        int intentos_deposito = 3;
+        
+        while (intentos_deposito > 0) {
+            System.out.println("Ingrese el monto a depositar:");
+            double monto = sc.nextDouble();
             
-             
-         }
-         
+            if (monto <= 0) {
+                intentos_deposito = intentos_deposito -1;
+                System.out.println("El monto debe ser mayor a 0. Te quedan " + intentos_deposito + " intentos");
+            } else {
+                saldo = saldo + monto;
+                System.out.println("Deposito exitoso!");
+                System.out.println("Nuevo saldo: " + saldo);
+                return true;
+            }
+        }
+        System.out.println("ERROR DE CAPA 8 xd");
+        return false;
     }
 }
