@@ -5,6 +5,7 @@
 package grupowhile1;
 import java.util.Scanner;
 public class GrupoWhile1 {
+    static double saldo = 1000; // variable compartida entre metodos
 
     /**
      * @param args the command line arguments
@@ -74,7 +75,6 @@ public class GrupoWhile1 {
         }
     }
     public static void consultar_saldo(){
-         double saldo = 1000;
          System.out.println("Saldo disponible: "+saldo);
          System.out.println("prueba");
     }
