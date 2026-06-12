@@ -47,6 +47,7 @@ public class GrupoWhile1 {
                     switch (opccion) {
                         case 1:
                             System.out.println("Consultar saldo:");
+                            consultar_saldo();
                             break;
                         case 2:
                             System.out.println("Retirar dinero:");
