@@ -96,9 +96,9 @@ public class GrupoWhile1 {
             if (saldo>=retirar){
                 System.out.println("Cantidad correcta");
                 System.out.println("se restara de su cuenta");
-                saldo_cuenta =saldo - retirar;
+                saldo =saldo - retirar;
                 System.out.println("se retiro con exito");
-                System.out.println("su cuenta quedo con "+saldo_cuenta +" dolares");
+                System.out.println("su cuenta quedo con "+saldo +" dolares");
                 System.out.println("============================");
                 break;
             }else{
